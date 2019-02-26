@@ -34,3 +34,21 @@ var film2 = document.getElementById("favoFilm2");
 var add2 = document.getElementById("addFilm2");
 
 add2.addEventListener('click', addToFavorite2);
+
+
+function addToFavorite3(){
+
+    console.log(film3);
+    
+    var test = document.getElementById("favoFilm3");
+    
+    test.classList.toggle("active");
+    if(add3.innerHTML=="Remove")
+        add3.innerHTML = "Add";
+    else add3.innerHTML = "Remove";
+}
+
+var film3 = document.getElementById("favoFilm3");
+var add3 = document.getElementById("addFilm3");
+
+add3.addEventListener('click', addToFavorite3);

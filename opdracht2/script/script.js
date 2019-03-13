@@ -21,8 +21,9 @@ window.addEventListener('scroll', move);
 //   myWork.classList.add("test")
 // }
 
-function workTop(){
-  window.scrollY = 707.2000122070312;
+function work(){
+  window.scrollTop = 1000;
+  console.log("testtest", window.scrollY)
 }
 
-workBtn.addEventListener('click', workTop);
+workBtn.addEventListener('click', work);

@@ -7,13 +7,6 @@ console.log("onscroll",onScroll);
 
 
 
-// function work(){
-//   window.scrollTop = 1000;
-//   // console.log("testtest", window.scrollY)
-// }
-//
-// workBtn.addEventListener('click', work);
-
 var scrollPos = window.scrollY;
 
 

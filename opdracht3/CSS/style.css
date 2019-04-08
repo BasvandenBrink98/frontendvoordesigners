@@ -1,48 +1,168 @@
-/* || general styles */
-
-html {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
-}
-
 body {
-  width: 800px;
-  margin: 0 auto;
+  font-family: 'montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2 {
-  font-family: 'Faster One', cursive;
+header {
+  margin: 0;
 }
 
-/* header styles */
-
-h1 {
-  font-size: 4rem;
+.beforeStart {
   text-align: center;
+  font-size: 5em;
+  color: #4A34EA;
 }
 
-header p {
-  font-size: 1.3rem;
-  font-weight: bold;
+.afterStart {
   text-align: center;
-}
-
-/* section styles */
-
-section article {
-  width: 33%;
-  float: left;
-}
-
-section p {
-  margin: 5px 0;
-}
-
-section ul {
+  display: block;
+  height: 1.5em;
+  /* border-bottom: solid 4px #4A34EA; */
+  color: #FFFFFF;
+  background-color: #4A34EA;
+  font-size: 3em;
   margin-top: 0;
+  padding-top: 0.2em;
+  box-shadow: 3px 3px 15px 1px rgba(74, 52, 234, 1);
+}
+
+#arrow {
+  transform: scale(0.2) rotate(-15deg);
+  position: absolute;
+  top: -22%;
+  left: 20%;
+}
+
+#arrow2 {
+  transform: scale(0.2) rotate(15deg) scaleX(-1);
+  position: absolute;
+  top: -22%;
+  right: 20%;
+}
+
+#start {
+  width: 5em;
+  height: 2em;
+  background-image: linear-gradient(315deg, #4A34EA 68%, #5E6FD3 32%);
+  border: none;
+  color: #FFFFFF;
+  font-family: 'montserrat', sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: absolute;
+  top: 45%;
+  left: 41.5%;
+  display: block;
+}
+
+#start:hover {
+  border: double 10px;
+  outline: 10px #4A34EA;
+}
+
+article {
+  margin-bottom: 1em;
+}
+
+.articleContainer {
+  width: 70%;
+  border: solid 2px #FFFFFF;
+  border-radius: 10px;
+  background-image: linear-gradient(315deg, #4A34EA 68%, #5E6FD3 32%);
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: auto 40% 40% auto;
+  box-shadow: 3px 3px 15px 1px rgba(74, 52, 234, 1);
+}
+
+img {
+  width: 20em;
+  height: auto;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: auto;
+  grid-row-end: auto;
+}
+
+.container {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: auto;
+  grid-row-end: auto;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
 }
 
 h2 {
-  font-size: 2.5rem;
-  letter-spacing: -5px;
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 1em;
+  color: #FFFFFF;
+  font-size: 2em;
+}
+
+label {
+  grid-row-start: auto;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+p {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+#extPlot{
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 0;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+li {
+  padding-left: 40px;
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 0.7em;
+}
+
+li:nth-of-type(1) {
+  grid-column-start: 1;
+}
+
+li:nth-of-type(2) {
+  grid-column-start: 2;
+}
+
+.rmBtn {
+  width: 8em;
+  height: 2em;
+  background-color: #FFFFFF;
+  border: none;
+  color: #4A34EA;
+  font-family: 'montserrat', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.longPlot {
+  display: block;
+  color: #4A34EA;
+  background-color: #FFFFFF;
+  padding: 4px;
 }

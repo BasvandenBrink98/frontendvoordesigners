@@ -1,10 +1,10 @@
 var section = document.querySelector('section');
-var btn = document.querySelector('button');
+var start = document.getElementById('start');
 
 
-// function getJSON(){
+
+function getJSON() {
   var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
-//  var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
 
 
   var request = new XMLHttpRequest();
@@ -12,53 +12,108 @@ var btn = document.querySelector('button');
   request.responseType = 'json';
   request.send();
 
-  request.onload = function(){
+  request.onload = function() {
     var films = request.response;
-    // console.log("data lengte",request.response.length)
-    // console.log("data",request.response)
     getTitles(request.response);
-    getReviews(request.response);
+    console.log("response");
+
   }
 
-  function getTitles(jsonObj){
+  function getTitles(jsonObj) {
     var filmTitle = jsonObj;
-    // console.log("jsonObj lengte:",jsonObj.length);
-    // console.log('film lengte', );
-
-    for (var i = 0; i < filmTitle.length; i++){
-
+    for (var i = 0; i < filmTitle.length; i++) {
+      var article = document.createElement('article');
+      var div = document.createElement('div');
+      var img = document.createElement('img');
+      var container = document.createElement('div');
+      var h2 = document.createElement('h2');
       var label = document.createElement('label');
-      label.textContent =  filmTitle[i].title;
-      unList.appendChild(label);
+      var p = document.createElement('p');
+      var btn = document.createElement('button');
+
+      article.setAttribute("tabindex", "0");
+      div.classList.add('articleContainer');
+      img.setAttribute("src", filmTitle[i].cover);
+      container.setAttribute("class", "container");
+      h2.textContent = filmTitle[i].title;
+      label.textContent = "Short plot:";
+      p.textContent = filmTitle[i].simple_plot;
+      btn.textContent = "read more";
+      btn.setAttribute("class", "rmBtn");
+      btn.setAttribute("tabindex", "-1")
+
+      var reviews = filmTitle[i].reviews;
+
+      div.appendChild(img);
+      div.appendChild(container);
+      container.appendChild(h2);
+      container.appendChild(label);
+      container.appendChild(p);
+      container.appendChild(btn);
+      article.appendChild(div);
+      section.appendChild(article);
+
+      var newP = document.createElement('p');
+      newP.textContent = filmTitle[i].plot;
+      newP.classList.add('hide');
+      newP.setAttribute("id","extPlot");
+
+      container.appendChild(newP);
 
 
-    }
+      btn.addEventListener('click', function() {
+        console.dir(this);
+
+        console.log(this.parentNode.querySelector('p.hide'));
+        if (this.textContent == "read more") {
+          this.textContent = "read less";
+          var longP = this.parentNode.querySelector('p.hide');
+          longP.classList.add('longPlot');
+        } else {
+          this.textContent = "read more";
+          var longP = this.parentNode.querySelector('p.hide');
+          longP.classList.remove('longPlot');
+        }
+
+        console.log("btn state: ", this.textContent);
+        // this.parentNode.querySelector('p.hide') = log de parent van de button en selecteer de p met class "longShot"
+
+      }); //end function
+      var ul = document.createElement('ul');
+      ul.textContent = 'Reviews:';
+
+      for (var r = 0; r < reviews.length; r++) {
+        var li = document.createElement('li');
+        var li2 = document.createElement('li');
 
 
-}
-
-var unList = document.createElement('ul');
-section.appendChild(unList);
+        li.textContent = 'Review ' + reviews[r].id + ':';
+        li2.textContent = 'Score: ' + reviews[r].score;
 
 
-  function getReviews(jsonObj){
-    var reviews = jsonObj;
-    for (var r = 0; r < reviews.length; r++){
-      var listItem = document.createElement('li');
-      var para = document.createElement('p');
-
-      listItem.textContent = 'Review ' + reviews[r].id + ':';
-      para.textContent = 'Score: ' + reviews[r].score;
-
-      unList.appendChild(listItem);
-      listItem.appendChild(para);
+        ul.appendChild(li);
+        ul.appendChild(li2);
 
 
-    }
-  }
+      } //end for
+      container.appendChild(ul);
 
-//   var removeBtn = document.removeElement('button');
-// }
-//
-//
-// btn.addEventListener('click',getJSON);
+    } //end for
+    console.dir(section);
+  } //end function
+
+  var changeH1 = document.querySelector('h1');
+  var removeBtn = document.getElementById('start');
+  var removeImg = document.getElementById('arrow');
+  var removeImg2 = document.getElementById('arrow2');
+  changeH1.textContent = "Movies";
+  changeH1.classList.add('afterStart');
+  changeH1.classList.remove('beforeStart');
+  removeBtn.parentNode.removeChild(removeBtn); //= spreek de parent van de button aan en verwijder child met id="start"
+  removeImg.parentNode.removeChild(removeImg);
+  removeImg2.parentNode.removeChild(removeImg2);
+
+} //end function
+
+
+start.addEventListener('click', getJSON);

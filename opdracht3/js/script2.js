@@ -10,9 +10,11 @@ function getJSON() {
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
+  //classList.add animatie
   request.send();
 
   request.onload = function() {
+    //classList.remove animatie
     var films = request.response;
     getTitles(request.response);
     console.log("response");
@@ -40,7 +42,7 @@ function getJSON() {
       p.textContent = filmTitle[i].simple_plot;
       btn.textContent = "read more";
       btn.setAttribute("class", "rmBtn");
-      btn.setAttribute("tabindex", "-1")
+      btn.setAttribute("tabindex", "-1");
 
       var reviews = filmTitle[i].reviews;
 

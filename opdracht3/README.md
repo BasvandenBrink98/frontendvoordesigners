@@ -17,3 +17,6 @@ Om te zorgen dat niet elke newP de class "longPlot" krijgt wanneer er op een but
 De tweede eis aan de opdracht was dat de gebruiker het ontwerp met meer dan 1 manier kon bedienen. Naast dat de gebruiker kan klikken op de buttons kan de gebruiker ook door de films heen scrollen door op 'tab' te klikken. Wanneer er op tab geklikt wordt zal de focus op het eerste article komen. Wanneer er nog een keer op tab geklikt wordt zal de focus op het tweede article komen, etc. Op deze manier kan die gebruiker snel door de films heen scrollen door middel van tab.
 
 Dit heb ik gedaan door de articles die in de loop aanworden gemaakt een tabindex van 0 te geven (article.setAttribute("tabindex", "0");). Zo weet de browser dat de focus op ook op articles kan komen wanneer er wordt getabt. Buttons kunnen normaal altijd een focus krijgen en er kan dus ook tussen getabt worden. Aangezien ik wil dat de gebruiker snel door de articles heen kan tabben, heb ik de buttons niet tab-baar gemaakt. Dit heb ik gedaan door btn.setAttribute("tabindex", "-1");. Door -1 als waarde te geven bij tabindex kan er daar niet op gefocust worden met tab.
+
+Mijn opdracht is hier te vinden:
+https://basvandenbrink98.github.io/frontendvoordesigners/opdracht3/

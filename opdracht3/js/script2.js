@@ -1,23 +1,23 @@
 var section = document.querySelector('section');
 var start = document.getElementById('start');
+var animatie = document.querySelector('div');
 
 
 
 function getJSON() {
   var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
-
-
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
-  //classList.add animatie
+  animatie.classList.add('loader');
   request.send();
 
   request.onload = function() {
-    //classList.remove animatie
-    var films = request.response;
-    getTitles(request.response);
-    console.log("response");
+    window.setTimeout(function() {
+        animatie.classList.remove('loader');
+        getTitles(request.response);
+        console.log("response succesvol");
+      }, 1000);
 
   }
 

@@ -2,7 +2,7 @@
 
 Voor het vak frontend voor designers, een vak wat gegeven wordt bij de opleiding Communicatie en Multimedia Design aan de Hogeschool van Amsterdam, heb ik deze website gemaakt. Het ging bij deze opdracht ging het voornamelijk om het ophalen van externe data en deze met javascript in de html te laden. Een tweede eis aan de opdracht was dat de gebruiker het ontwerp op verschillende manieren moest kunnen bedienen. Ik zal hier de belangrijkste stukken code toelichte.
 
-Het inladen van de externe data heb ik gedaan door middel van XMLHttpRequest. Deze haalt informatie op uit de gegeven url. (https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json)= url van json file.
+Het inladen van de externe data heb ik gedaan door middel van XMLHttpRequest. Deze haalt informatie op uit de gegeven url. (https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json) = url van json file.
 Dit heb ik gedaan door eerst een variabele aan te maken met daar in de url van de json file. Vervolgens heb ik een XMLHttpRequest object aangemaakt. Hier na open ik de request door request.open();. Hierbij vertel vertel ik wat de request moet gaan doen. Ik wil dat de gegeven url wordt opgehaald. Door middel van request.open('GET', requestURL); doe ik dat.
 Vervolgens geef ik mee om wat voor datatype het gaat. In dit geval json. Daarom de regel request.responseType = 'json';. Hierna verstuur ik het request door request.send();. Dit ging over de regels 8 t/m 13 in script2.js.
 
